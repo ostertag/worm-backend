@@ -9,6 +9,8 @@ const FOOD_COUNT = 10;
 const BUSH_COUNT = 10;
 const TICK_RATE = 250; // 4 moves per second (double speed)
 
+const port = process.env.PORT || 4000;
+
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
@@ -344,6 +346,6 @@ app.get("/", (_req, res) => {
   res.send("Multiplayer Worm Game Server Running");
 });
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+server.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
